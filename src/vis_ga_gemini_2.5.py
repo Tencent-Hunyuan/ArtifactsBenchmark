@@ -11,14 +11,17 @@ plt.rcParams.update({
 # Data preparation - extracted from artifacts1.json
 data = {
     'Model': [
+        'GPT-5',
+        'Claude Opus 4.1',
         'Gemini-2.5-Pro',
+        'GPT-OSS-120B',
         'Claude Sonnet 4 (20250514)',
         'Qwen3-235B-A22B-Thinking-2507',
         'o3-2025-04-16',
         'GLM-4.5',
-        'GLM-4.5_Air',
         'Claude 3.7 Sonnet (20250219)',
         'Qwen3-235B-A22B-Instruct-2507',
+        'GLM-4.5_Air',
         'DeepSeek-R1-0528',
         'Kimi K2 Instruct',
         'Qwen3-Coder-480B-A35B-Instruct',
@@ -30,17 +33,20 @@ data = {
         'hunyuan-A13B',
         'Claude 3.5 Sonnet (20241022)',
         'KAT-V1-40B',
-        'GPT-4O'
+        'GPT-4o'
     ],
     'Score': [
+        72.55,
+        59.76,
         57.74,
+        57.69,
         57.28,
         55.01,
         54.04,
         51.33,
-        48.90,
         51.32,
         50.62,
+        48.90,
         47.73,
         47.65,
         47.15,
@@ -55,14 +61,17 @@ data = {
         33.54,
     ],
     'Type': [
+        'Closed-Source',  # GPT-5
+        'Closed-Source',  # Claude Opus 4.1
         'Closed-Source',  # Gemini-2.5-Pro
+        'Open-Source',    # GPT-OSS-120B
         'Closed-Source',  # Claude Sonnet 4 (20250514)
         'Open-Source',    # Qwen3-235B-A22B-Thinking-2507
         'Closed-Source',  # o3-2025-04-16
         'Open-Source',    # GLM-4.5
-        'Open-Source',    # GLM-4.5_Air
-        'Closed-Source',  # Claude 3.7 Sonnet (20250219)
+        'Open-Source',    # Claude 3.7 Sonnet (20250219) - 修正为Open-Source
         'Open-Source',    # Qwen3-235B-A22B-Instruct-2507
+        'Open-Source',    # GLM-4.5_Air
         'Open-Source',    # DeepSeek-R1-0528
         'Open-Source',    # Kimi K2 Instruct
         'Open-Source',    # Qwen3-Coder-480B-A35B-Instruct
@@ -73,8 +82,8 @@ data = {
         'Open-Source',    # Qwen3-235B-A22B
         'Open-Source',    # hunyuan-A13B
         'Closed-Source',  # Claude 3.5 Sonnet (20241022)
-        'Open-Source',     # KAT-V1
-        'Closed-Source',  # GPT4O
+        'Open-Source',    # KAT-V1-40B
+        'Closed-Source',  # GPT-4o - 修正命名
     ]
 }
 
@@ -100,9 +109,9 @@ plt.rcParams.update({
     'ytick.labelsize': 10
 })
 
-# Create figure
+# Create figure - adjusted height for more models
 total_bars = len(df)
-fig_height = max(6, total_bars * 0.3)
+fig_height = max(7, total_bars * 0.35)  # slightly larger multiplier for better spacing
 fig, ax = plt.subplots(figsize=(10, fig_height))
 
 # Draw bars

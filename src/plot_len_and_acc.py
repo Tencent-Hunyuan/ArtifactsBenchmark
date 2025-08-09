@@ -6,6 +6,10 @@ import seaborn as sns
 # Set style for publication quality
 plt.style.use('seaborn-v0_8-whitegrid')
 sns.set_palette("husl")
+
+# ========== 新增：拟合曲线开关 ==========
+SHOW_FIT_CURVE = True  # 设置为 False 可以关闭拟合曲线
+
 plt.rcParams.update({
     'font.size': 12,
     'font.family': 'serif',
@@ -22,8 +26,11 @@ plt.rcParams.update({
 
 # Data from the table - simplified to closed/open classification
 data = {
+    "GPT-5": {"AVG": 72.55, "IFLEN": 0, "category": "closed"},
+    "Claude Opus 4.1": {"AVG": 59.76, "IFLEN": 0, "category": "closed"},
     "Gemini-2.5-Pro": {"AVG": 57.74, "IFLEN": 0, "category": "closed"},
     "Claude Sonnet 4 (20250514)": {"AVG": 57.28, "IFLEN": 0, "category": "closed"},
+    "GPT-OSS-120B": {"AVG": 57.69, "IFLEN": 16018.79, "category": "open"},
     "Qwen3-235B-A22B-Thinking-2507": {"AVG": 55.01, "IFLEN": 34357.84, "category": "open"},
     "o3-2025-04-16": {"AVG": 54.04, "IFLEN": 0, "category": "closed"},
     "GLM-4.5": {"AVG": 51.33, "IFLEN": 21854.10, "category": "open"},
@@ -71,8 +78,44 @@ for model, vals in data.items():
 # Enhanced vertical line for unknown category
 ax.axvline(unknown_x, color='#666666', linestyle='--', linewidth=2, alpha=0.7, zorder=1)
 
+# ========== 新增：绘制拟合曲线 ==========
+if SHOW_FIT_CURVE:
+    # 收集已知推理长度的数据点（排除IFLEN=0的模型）
+    known_x = []
+    known_y = []
+    for model, vals in data.items():
+        if vals["IFLEN"] > 0:  # 只使用已知推理长度的数据
+            known_x.append(vals["IFLEN"])
+            known_y.append(vals["AVG"])
+    
+    if len(known_x) >= 2:  # 至少需要2个点来拟合直线
+        # 转换为numpy数组
+        known_x = np.array(known_x)
+        known_y = np.array(known_y)
+        
+        # 使用线性拟合（一次多项式）
+        coefficients = np.polyfit(known_x, known_y, 1)  # 1表示一次多项式（直线）
+        poly_func = np.poly1d(coefficients)
+        
+        # 生成平滑的x值用于绘制直线
+        x_smooth = np.linspace(min(known_x), max(known_x), 200)
+        y_smooth = poly_func(x_smooth)
+        
+        # 绘制拟合直线（虚线样式）
+        ax.plot(x_smooth, y_smooth, color='#FF6B35', linewidth=2.5, 
+                alpha=0.8, linestyle='--', zorder=3,  # 改为虚线
+                label='Fitted Line')  # 改为英文
+        
+        # 计算相关系数
+        correlation = np.corrcoef(known_x, known_y)[0, 1]
+        
+        print(f"拟合直线已添加 - 使用{len(known_x)}个已知推理长度的数据点")
+        print(f"线性拟合方程: y = {coefficients[0]:.4f}x + {coefficients[1]:.2f}")
+        print(f"相关系数: {correlation:.3f}")
+
 # Set axis limits first - before label positioning
-ax.set_ylim(30, 60)
+#ax.set_ylim(30, 75)
+ax.set_ylim(33, 73)
 ax.set_xlim(-2000, unknown_x + max_iflen * 0.15)
 
 # Add shaded region for unknown inference length
@@ -374,6 +417,14 @@ ax.set_title('ArtifactsBench Performance vs. Model Inference Length',
 legend_elements = [plt.scatter([], [], c=color, s=100, alpha=0.8, 
                               edgecolors='white', linewidth=1.2, label=cat.title()) 
                   for cat, color in colors.items()]
+
+# ========== 新增：如果显示拟合曲线，添加到图例中 ==========
+if SHOW_FIT_CURVE and 'known_x' in locals() and len(known_x) >= 2:
+    # 添加拟合曲线到图例
+    fit_curve_line = plt.Line2D([0], [0], color='#FF6B35', linewidth=2.5, 
+                               alpha=0.8, linestyle='--', label='Fitted Line')  # 改为英文
+    legend_elements.append(fit_curve_line)
+
 ax.legend(handles=legend_elements, loc='lower right', frameon=True, 
          fancybox=True, shadow=True, fontsize=11, title='Model Category',
          title_fontsize=12)
@@ -383,14 +434,14 @@ ax.grid(True, linestyle='-', alpha=0.3, linewidth=0.8)
 ax.set_axisbelow(True)
 
 # Add performance zones with subtle background colors
-ax.axhspan(55, 60, alpha=0.1, color='green', zorder=0)
-ax.axhspan(45, 55, alpha=0.1, color='yellow', zorder=0)
-ax.axhspan(30, 45, alpha=0.1, color='orange', zorder=0)
+ax.axhspan(60, 75, alpha=0.1, color='green', zorder=0)  # High performance: 60-75
+ax.axhspan(45, 60, alpha=0.1, color='yellow', zorder=0)  # Medium performance: 45-60
+ax.axhspan(30, 45, alpha=0.1, color='orange', zorder=0)  # Lower performance: 30-45
 
 # Add text annotations for performance zones - positioned to avoid label conflicts
-ax.text(max_iflen * 0.15, 57.5, 'High Performance', fontsize=11, 
+ax.text(max_iflen * 0.15, 67.5, 'High Performance', fontsize=11, 
         alpha=0.7, style='italic', ha='center', fontweight='bold')
-ax.text(max_iflen * 0.15, 50, 'Medium Performance', fontsize=11, 
+ax.text(max_iflen * 0.15, 52.5, 'Medium Performance', fontsize=11, 
         alpha=0.7, style='italic', ha='center', fontweight='bold')
 ax.text(max_iflen * 0.15, 37.5, 'Lower Performance', fontsize=11, 
         alpha=0.7, style='italic', ha='center', fontweight='bold')
@@ -409,6 +460,13 @@ print("图表已生成！标签重叠问题已修复：")
 print("- Qwen3-Coder-30B-A3B-Instruct -> Qwen3-Coder-30B (左上角，位置已调整)")
 print("- Qwen3-235B-A22B -> Qwen3-235B (右边)")  
 print("- hunyuan-A13B -> Hunyuan-A13B (左下角，位置已调整)")
+
+# ========== 新增：拟合曲线状态说明 ==========
+print(f"\n拟合直线功能: {'已启用' if SHOW_FIT_CURVE else '已关闭'}")
+print("提示：可以通过修改代码中的 SHOW_FIT_CURVE 变量来控制是否显示拟合直线")
+if SHOW_FIT_CURVE:
+    print("- 拟合直线使用已知推理长度的数据点进行线性拟合")
+    print("- 直线为橙色虚线，帮助可视化数据趋势")
 
 # Optional: Save in publication formats (uncomment when needed)
 # plt.savefig('src/artifactsbench_analysis.pdf', dpi=300, bbox_inches='tight')

@@ -32,6 +32,26 @@ ArtifactsBench is open-sourced, including the benchmark with **1,825 diverse tas
 
 ## 🚀 Latest Updates & Release Notes
 
+### **Version 1.2 - August 9, 2025** 🔥🔥🔥
+
+#### **Breakthrough Performance Updates:**
+
+🚀 **Revolutionary Model Additions**: Added comprehensive evaluation of cutting-edge models including **GPT-5**, **GPT-OSS-120B**, and **Claude Opus 4.1**, representing the latest advances in AI code generation capabilities.
+
+🏆 **Historic Achievements**: 
+- **GPT-5** achieves an unprecedented **72.55** average score, setting a new benchmark record and establishing the new state-of-the-art for closed-source models
+- **GPT-OSS-120B** secures the **#1 position among open-source models** with a remarkable **57.69** average score
+- **Claude Opus 4.1** demonstrates significant advancement with **59.76** average score
+
+💡 **OpenAI's Code Visualization Dominance**: The results showcase **OpenAI's exceptional capabilities in visual code generation**, with both GPT-5 and GPT-OSS-120B leading their respective categories and demonstrating superior understanding of interactive visual artifact creation.
+
+📈 **Performance Insights**: Enhanced analysis reveals the relationship between model inference patterns and visual code generation quality, providing deeper insights into what makes models excel at creating interactive experiences.
+
+#### **Key Highlights:**
+- **First 70+ Score Achievement**: GPT-5 breaks the 70-point barrier, demonstrating quantum leap in visual artifact generation
+- **Open-Source Leadership**: GPT-OSS-120B establishes new standards for open-source visual code generation
+- **Cross-Category Excellence**: OpenAI models demonstrate consistent superiority across web applications, interactive games, and dynamic visualizations
+
 ### **Version 1.1 - July 30, 2025** 🔥🔥🔥
 
 #### **Key Updates:**
@@ -240,9 +260,26 @@ python3 src/infer_qvl.py \
 
 For the latest results, please visit the <a href="https://artifactsbenchmark.github.io/leaderboard.html">live leaderboard</a>.
 
-### **Current Results (Version 1.1)**
+### **Current Results (Version 1.2 - August 2025)**
 
-The following are the main results on ArtifactsBench, scored by the unified `Gemini-2.5-Pro` referee. A higher score indicates better overall capability in generating visual and interactive artifacts.
+The following are the latest results on ArtifactsBench, scored by the unified `Gemini-2.5-Pro` referee. A higher score indicates better overall capability in generating visual and interactive artifacts. This update showcases groundbreaking achievements with **GPT-5 setting a new benchmark record at 72.55** and **GPT-OSS-120B leading the open-source category**.
+
+#### **Top Performing Models:**
+
+| **Model** | **AVG** | **Category** | **Inference Length** | **Achievement** |
+|-----------|---------|--------------|---------------------|-----------------|
+| **GPT-5** | **72.55** | Closed | Unknown | 🥇 **New Benchmark Record** |
+| **Claude Opus 4.1** | **59.76** | Closed | Unknown | 🥈 **Closed-Source #2** |
+| **Gemini-2.5-Pro** | **57.74** | Closed | Unknown | 🥉 **Closed-Source #3** |
+| **GPT-OSS-120B** | **57.69** | Open | 16,018 tokens | 🏆 **Open-Source Champion** |
+| **Claude Sonnet 4** | **57.28** | Closed | Unknown | **Strong Performance** |
+| **Qwen3-235B-Thinking** | **55.01** | Open | 34,357 tokens | **Open-Source #2** |
+
+*Complete results visualization available in `figures/artifactsbench_vs_model_infer.png`*
+
+### **Previous Results (Version 1.1)**
+
+The following are the main results on ArtifactsBench from July 2025, scored by the unified `Gemini-2.5-Pro` referee.
 
 <div align="center">
   <img src="figures/main_results_overview2.png" width="90%">
