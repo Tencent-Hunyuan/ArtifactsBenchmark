@@ -27,6 +27,7 @@ data = {
         'Qwen3-Coder-480B-A35B-Instruct',
         'GPT-4.1-2025-04-14',
         'DeepSeek-V3-0324',
+        'GPT-5-Chat-Latest',
         'DeepSeek-R1',
         'Qwen3-Coder-30B-A3B-Instruct',
         'Qwen3-235B-A22B',
@@ -52,6 +53,7 @@ data = {
         47.15,
         45.95,
         43.50,
+        41.89,
         41.41,
         41.16,
         41.09,
@@ -77,6 +79,7 @@ data = {
         'Open-Source',    # Qwen3-Coder-480B-A35B-Instruct
         'Closed-Source',  # GPT-4.1-2025-04-14
         'Open-Source',    # DeepSeek-V3-0324
+        'Closed-Source',  # GPT-5-Chat-Latest
         'Open-Source',    # DeepSeek-R1
         'Open-Source',    # Qwen3-Coder-30B-A3B-Instruct
         'Open-Source',    # Qwen3-235B-A22B

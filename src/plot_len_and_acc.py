@@ -42,6 +42,7 @@ data = {
     "Qwen3-Coder-480B-A35B-Instruct": {"AVG": 47.15, "IFLEN": 17581.53, "category": "open"},
     "GPT-4.1-2025-04-14": {"AVG": 45.95, "IFLEN": 7290.94, "category": "closed"},
     "DeepSeek-V3-0324": {"AVG": 43.50, "IFLEN": 11443.06, "category": "open"},
+    "GPT-5-Chat-Latest": {"AVG": 41.89, "IFLEN": 5573.16, "category": "closed"},
     "DeepSeek-R1": {"AVG": 41.41, "IFLEN": 10751.63, "category": "open"},
     "Qwen3-Coder-30B-A3B-Instruct": {"AVG": 41.16, "IFLEN": 18087.12, "category": "open"},
     "Qwen3-235B-A22B": {"AVG": 41.09, "IFLEN": 19314.92, "category": "open"},
@@ -407,7 +408,7 @@ ax.set_xticks(all_ticks)
 ax.set_xticklabels(tick_labels, rotation=0)
 
 # Enhanced labels and title
-ax.set_xlabel('Model Inference Output Length (Tokens)', fontweight='bold', fontsize=14)
+ax.set_xlabel('Model Inference Output Length (Seq_Length)', fontweight='bold', fontsize=14)
 ax.set_ylabel('ArtifactsBench Average Score', fontweight='bold', fontsize=14)
 ax.set_title('ArtifactsBench Performance vs. Model Inference Length', 
              fontweight='bold', fontsize=16, pad=30)
