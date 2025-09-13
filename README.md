@@ -2,17 +2,9 @@
 
 # ArtifactsBench: Bridging the Visual-Interactive Gap in LLM Code Generation Evaluation
 
-**Tencent Hunyuan Team**
+**Anonymous**
 
 ---
-
-<p align="center">
-    <a href="https://arxiv.org/abs/2507.04952">📖 Paper</a> •
-    <a href="https://artifactsbenchmark.github.io/">🏠 Home Page</a> •
-    <a href="https://huggingface.co/datasets/tencent/ArtifactsBenchmark/">💻 Data </a> •
-    <a href="https://artifactsbenchmark.github.io/leaderboard.html">🏆 Leaderboard</a> •
-    <a href="#citation"><b>📜 Citation</b></a>
-</p>
 
 <div align="center">
   <img src="figures/first_image.png" width="80%">
@@ -338,53 +330,6 @@ If you find our project helpful, please cite:
 }
 ```
 
-## Contributions
-
-**First Authors** 
-*   Chenchen Zhang, Tencent
-*   Yuhang Li, Tencent
-
-**Core Contributors** 
-*   Can Xu, Tencent
-*   Jiaheng Liu, NJU
-*   Ao Liu, Tencent
-*   Shihui Hu, Tencent
-
-**Contributors | Algorithm Support (Alphabet Order)** 
-*   Dengpeng Wu, Tencent
-*   Guanhua Huang, Tencent
-*   Kejiao Li, Tencent
-*   Qi Yi, Tencent
-*   Ruibin Xiong, Tencent
-*   Haotian Zhu, Tencent
-*   Yuanxing Zhang, PKU
-*   Yuhao Jiang, Tencent
-*   Yue Zhang, Tencent
-*   Zenan Xu, Tencent
-
-**Contributors | Data and Front-End Technical Support (Alphabet Order)** 
-*   Bohui Zhai, Tencent
-*   Guoxiang He, Tencent
-*   Hebin Li, Tencent
-*   Jie Zhao, Tencent
-*   Le Zhang, Tencent
-*   Lingyun Tan, Tencent
-*   Pengyu Guo, Tencent
-*   Xianshu Pang, Tencent
-*   Yang Ruan, Tencent
-*   Zhifeng Zhang, Tencent
-*   Zhonghu Wang, Tencent
-*   Ziyan Xu, Tencent
-*   Zuopu Yin, Tencent
-
-**Corresponding Authors** 
-*   Wiggin Zhou, Tencent
-*   Chayse Zhou, Tencent
-*   Fengzong Lian, Tencent
-*   `{wigginzhou,chaysezhou,faxonlian}@tencent.com`
-
-If you encounter any issues during testing, please contact adamwzhang@tencent.com.
-
 ## Data Availability & Reproducibility
 
 **🔓 FULLY OPEN-SOURCE**: All intermediate evaluation results and reasoning data are completely open-sourced and available for download to ensure full reproducibility of our benchmark results. The updated evaluation pipeline with Gemini-2.5-Pro is fully automated and deterministic.
@@ -400,9 +345,9 @@ For researchers interested in:
 - **Analyzing judge reasoning**: Access detailed judge model inference logs and reasoning chains
 - **Verifying our claims**: Complete audit trail from raw outputs to final scores
 
-## License
+<!-- ## License
 
-This repository is licensed under the terms of the [LICENSE](LICENSE) file.
+This repository is licensed under the terms of the [LICENSE](LICENSE) file. -->
 
 
 
