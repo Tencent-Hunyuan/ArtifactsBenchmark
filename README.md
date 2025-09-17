@@ -92,7 +92,6 @@ All intermediate model results, judge model inference results, and reasoning cha
   <i>Figure: Latest ArtifactsBench results (July 2025) with expanded model coverage and unified Gemini-2.5-Pro evaluation.</i>
 </p>
 
-*For comparison, the previous results table is available in the [Leaderboard section](#-leaderboard).*
 
 ## Core Features
 
@@ -250,7 +249,7 @@ python3 src/infer_qvl.py \
 
 ## 🏆 Leaderboard
 
-For the latest results, please visit the <a href="https://artifactsbenchmark.github.io/leaderboard.html">live leaderboard</a>.
+
 
 ### **Current Results (Version 1.2 - August 2025)**
 
@@ -313,22 +312,7 @@ The following were the original results on ArtifactsBench, scored by the `Gemini
 *   **GAME**: Game, **SVG**: SVG Generation, **WEB**: Web Application, **SI**: Simulation, **MS**: Management System
 *   **AVG**: Global Average Score
 
-<a id="citation"></a>
-## Citation
 
-If you find our project helpful, please cite:
-
-```bibtex
-@misc{zhang2025artifactsbenchbridgingvisualinteractivegap,
-      title={ArtifactsBench: Bridging the Visual-Interactive Gap in LLM Code Generation Evaluation}, 
-      author={Chenchen Zhang and Yuhang Li and Can Xu and Jiaheng Liu and Ao Liu and Shihui Hu and Dengpeng Wu and Guanhua Huang and Kejiao Li and Qi Yi and Ruibin Xiong and Haotian Zhu and Yuanxing Zhang and Yuhao Jiang and Yue Zhang and Zenan Xu and Bohui Zhai and Guoxiang He and Hebin Li and Jie Zhao and Le Zhang and Lingyun Tan and Pengyu Guo and Xianshu Pang and Yang Ruan and Zhifeng Zhang and Zhonghu Wang and Ziyan Xu and Zuopu Yin and Wiggin Zhou and Chayse Zhou and Fengzong Lian},
-      year={2025},
-      eprint={2507.04952},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2507.04952}, 
-}
-```
 
 ## Data Availability & Reproducibility
 
