@@ -32,6 +32,10 @@ ArtifactsBench is open-sourced, including the benchmark with **1,825 diverse tas
 
 ## 🚀 Latest Updates & Release Notes
 
+- 2025.10.27 | MiniMax-M2 — ArtifactsBench: 66.8 (DeepSeek‑V3.2: 55.8). 🎉🎉🎉 Link: [MiniMax-M2](https://github.com/MiniMax-AI/MiniMax-M2); in‑repo: `@MiniMax-Max-M2`. Scores per the report in the linked page.
+- 2025.10.23 | ReLook (paper) — Vision‑grounded RL for agentic web coding: MLLM visual critic, zero‑reward for invalid renders, Forced Optimization, critic‑free inference; outperforms strong baselines. 🎉🎉🎉 Link: [arXiv:2510.11498](https://arxiv.org/abs/2510.11498).
+- 2025.10.08 | Ling‑1T (1T) — ArtifactsBench: 59.31 (DeepSeek‑V3.1‑Terminus: 43.29). 🎉🎉🎉 Link: [Ling-1T model card](https://huggingface.co/inclusionAI/Ling-1T); Scores per the report in the linked page.
+
 ### **Version 1.2 - August 9, 2025** 🔥🔥🔥
 
 #### **Breakthrough Performance Updates:**
@@ -327,14 +331,11 @@ The following were the original results on ArtifactsBench, scored by the `Gemini
 If you find our project helpful, please cite:
 
 ```bibtex
-@misc{zhang2025artifactsbenchbridgingvisualinteractivegap,
-      title={ArtifactsBench: Bridging the Visual-Interactive Gap in LLM Code Generation Evaluation}, 
-      author={Chenchen Zhang and Yuhang Li and Can Xu and Jiaheng Liu and Ao Liu and Shihui Hu and Dengpeng Wu and Guanhua Huang and Kejiao Li and Qi Yi and Ruibin Xiong and Haotian Zhu and Yuanxing Zhang and Yuhao Jiang and Yue Zhang and Zenan Xu and Bohui Zhai and Guoxiang He and Hebin Li and Jie Zhao and Le Zhang and Lingyun Tan and Pengyu Guo and Xianshu Pang and Yang Ruan and Zhifeng Zhang and Zhonghu Wang and Ziyan Xu and Zuopu Yin and Wiggin Zhou and Chayse Zhou and Fengzong Lian},
-      year={2025},
-      eprint={2507.04952},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2507.04952}, 
+@article{zhang2025artifactsbench,
+  title={ArtifactsBench: Bridging the Visual-Interactive Gap in LLM Code Generation Evaluation},
+  author={Zhang, Chenchen and Li, Yuhang and Xu, Can and Liu, Jiaheng and Liu, Ao and Hu, Shihui and Wu, Dengpeng and Huang, Guanhua and Li, Kejiao and Yi, Qi and others},
+  journal={arXiv preprint arXiv:2507.04952},
+  year={2025}
 }
 ```
 
@@ -362,7 +363,13 @@ If you find our project helpful, please cite:
 *   Yue Zhang, Tencent
 *   Zenan Xu, Tencent
 
-**Contributors | Data and Front-End Technical Support (Alphabet Order)** 
+**Corresponding Authors** 
+*   Wiggin Zhou, Tencent
+*   Chayse Zhou, Tencent
+*   Fengzong Lian, Tencent
+*   `{wigginzhou,chaysezhou,faxonlian}@tencent.com`
+
+**Acknowledgements | Data and Front-End Technical Support (Alphabet Order)** 
 *   Bohui Zhai, Tencent
 *   Guoxiang He, Tencent
 *   Hebin Li, Tencent
@@ -377,11 +384,7 @@ If you find our project helpful, please cite:
 *   Ziyan Xu, Tencent
 *   Zuopu Yin, Tencent
 
-**Corresponding Authors** 
-*   Wiggin Zhou, Tencent
-*   Chayse Zhou, Tencent
-*   Fengzong Lian, Tencent
-*   `{wigginzhou,chaysezhou,faxonlian}@tencent.com`
+
 
 If you encounter any issues during testing, please contact adamwzhang@tencent.com.
 
@@ -403,6 +406,3 @@ For researchers interested in:
 ## License
 
 This repository is licensed under the terms of the [LICENSE](LICENSE) file.
-
-
-
