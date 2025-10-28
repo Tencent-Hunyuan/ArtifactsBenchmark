@@ -73,11 +73,14 @@ def extract_html_content(answer, extracted):
     Returns:
     - str: The extracted HTML content, or the raw extracted content if an error occurs.
     """
-    try:
-        if extracted["type"] == "html":
-            return extract_html(answer)
-    except Exception:
-        return extracted["content"]
+    if extracted['type'] == 'html':
+        try:
+            html_code = extract_html(answer)
+        except:
+            html_code = extracted['content']
+    else:
+        html_code = extracted['content']
+    return html_code
 
 
 def extract_information(index, line_data, count, screenshots_dir):
