@@ -170,9 +170,12 @@ pip install tqdm
 You can use your own model to perform inference based on the "question" field in the `dataset/artifacts_bench.json` file, and save the results in the "answer" field.
 ```JSON
 {
-    "index": "unique identifier in the dataset that corresponds one-to-one with 'question'",
-    "question": "each 'question' in ArtifactsBench",
-    "answer": "The answer inferred by your model based on the 'question'"
+  "index": "Unique identifier in the dataset that corresponds one-to-one with 'question'.",
+  "question": "Each 'question' in ArtifactsBench.",
+  "answer": "The answer inferred by your model based on the 'question'.",
+  "checklist": "Array of evaluation criteria used by the MLLM judge (do not modify). Each item is an atomic check the judge will verify.",
+  "class": "Category/type label for the sample",
+  "difficulty": "Difficulty level of the sample, e.g., 'easy' | 'medium' | 'hard' (or a numeric scale)."
 }
 ```
 
