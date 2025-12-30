@@ -111,7 +111,7 @@ All intermediate model results, judge model inference results, and reasoning cha
 ## Core Features
 
 -   **A Diverse and Hierarchical Benchmark Suite:** ArtifactsBench comprises a rich set of tasks derived from real-world applications, including component-based web development, SVG-based data visualization, and interactive mini-games. Tasks are stratified by complexity (simple, medium, hard) to robustly measure model capabilities across a meaningful difficulty gradient.
--   **A Novel Multimodal and Automated Evaluation Pipeline:** We propose a new evaluation strategy that synergizes automated interaction with Multimodal Large Language Model (MLLM)-based assessment. Our framework programmatically interacts with the generated artifacts (e.g., clicking buttons, dispatching events) and captures visual states (e.g., screenshots, GIFs). An MLLM-as-Judge then evaluates these visual and textual traces against fine-grained, per-task criteria.
+-   **A Novel Multimodal and Automated Evaluation Pipeline:** We propose a new evaluation strategy that synergizes automated interaction with Multimodal Large Language Model (MLLM)-based assessment. Our framework renders each artifact and captures its behavior via temporal (three-step) screenshots. This visual evidence, alongside the source code, is then assessed by a Multimodal LLM (MLLM)-as-Judge guided by a fine-grained, per-task checklist to ensure holistic and reproducible scoring.
 -   **In-depth Analysis and Gold-Standard Validation:** We conducted a large-scale evaluation of over 30 prominent LLMs. Our automated evaluation achieves a striking **94.4% ranking consistency with WebDev Arena**, the gold-standard for human preference, validating our approach as a highly reliable proxy for human-perceived quality.
 
 ## Benchmark Comparison
@@ -411,3 +411,4 @@ For researchers interested in:
 ## License
 
 This repository is licensed under the terms of the [LICENSE](LICENSE) file.
+
